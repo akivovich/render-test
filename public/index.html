@@ -1,34 +1,14 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <title>Test App</title>
-</head>
-<body>
-  <h1>Тестовое приложение</h1>
-  <input id="text" type="text" />
-  <button onclick="save()">Сохранить</button>
-
-  <script>
-    const API = "https://your-service.onrender.com";
-
-    async function load() {
-      const res = await fetch(API + "/string");
-      const data = await res.json();
-      document.getElementById("text").value = data.value;
-    }
-
-    async function save() {
-      const value = document.getElementById("text").value;
-      await fetch(API + "/string", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ value })
-      });
-      alert("Сохранено!");
-    }
-
-    //load();
-  </script>
-</body>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>client</title>
+    <script type="module" crossorigin src="/assets/index-CkrifsNF.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-DjRBezdE.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
 </html>
