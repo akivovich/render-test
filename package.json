@@ -2,8 +2,11 @@
   "name": "test-app",
   "version": "1.0.0",
   "main": "server.js",
+  "type": "module",
   "scripts": {
-    "start": "node server.js"
+    "build:client": "npm run build --prefix client",
+    "start:server": "node server.js",
+    "start": "npm run build:client && npm run start:server"
   },
   "keywords": [],
   "author": "",
@@ -11,10 +14,12 @@
   "description": "",
   "dependencies": {
     "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
     "express": "^5.1.0",
+    "nodemailer": "^7.0.9",
     "pg": "^8.16.3"
   },
   "engines": {
-  "node": "22.13.0"
+    "node": "22.13.0"
   }
 }
